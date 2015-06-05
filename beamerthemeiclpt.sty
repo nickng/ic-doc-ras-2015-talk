@@ -42,10 +42,9 @@
 %
 % /////////////////////////////////////////////////////////////////
 
-\newif\if@slidenumber
-\@slidenumberfalse
-\DeclareOption{slidenumber}{\@slidenumbertrue}
-\ProcessOptions
+\DeclareStringOption[mrg]{hashtag}[mrg]
+\DeclareBoolOption[false]{slidenumber}
+\ProcessKeyvalOptions*
 
 \definecolor{beamer@icdarkblue}{RGB}{0,51,102}
 \definecolor{beamer@icmiddleblue}{RGB}{0,82,150} 
@@ -94,15 +93,15 @@ in head/foot}{fg=beamer@iclightblue,bg=beamer@icmiddleblue}
 \defbeamertemplate*{footline}{iclpt theme}
 {%
 \begin{beamercolorbox}[ht=.30cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm,rightskip=.3cm]{author in head/foot}%
-  \begin{minipage}[c]{0.65\textwidth}%
+  \begin{minipage}[c]{0.62\textwidth}%
     \usebeamerfont{author in head/foot}
     \insertshortauthor 
-    \insertshorttitle
+    {\it \insertshorttitle}
   \end{minipage}\hfill% 
-  \begin{minipage}[c]{0.3\textwidth}
+  \begin{minipage}[c]{0.32\textwidth}
     \hfill \textsf{\href{http://mrg.doc.ic.ac.uk}{mrg.doc.ic.ac.uk}}\hspace{1em}
-    \texttt{\#mrg}
-    \if@slidenumber
+    \texttt{\#\beamerthemeiclpt@hashtag}
+    \ifbeamerthemeiclpt@slidenumber
       \usebeamerfont{footline}%
       \usebeamercolor[fg]{footline}%
       \hspace{0.5em}\insertframenumber/\inserttotalframenumber%
