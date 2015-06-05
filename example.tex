@@ -1,0 +1,31 @@
+\documentclass{beamer}
+\usetheme{iclpt}
+
+% This macro adds page number to the slides. Comment out if not needed.
+\addtobeamertemplate{navigation symbols}{}{%
+  \usebeamerfont{footline}%
+  \usebeamercolor[fg]{footline}%
+  \hspace{1em}%
+  \insertframenumber/\inserttotalframenumber
+}
+
+\title{MRG template demo}
+\author{First, Last}
+\date{Day Month Year}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Frame title}
+  This is the MRG template.
+  \begin{itemize}
+    \item Top level bullet point.
+      \begin{itemize}
+        \item Second level bullet point.
+          \begin{itemize}
+            \item Third (last) level bullet point.
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\end{document}
