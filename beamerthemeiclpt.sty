@@ -83,15 +83,19 @@ in head/foot}{fg=beamer@iclightblue,bg=beamer@icmiddleblue}
 
 \defbeamertemplate*{headline}{iclpt theme}
 {%
+\ifnum \insertpagenumber=1
   \begin{beamercolorbox}[leftskip=.1cm,rightskip=.1cm,ht=.7cm,dp=0.1cm,wd=\textwidth]{institute in head/foot}
     \includegraphics[height=.6cm]{images/icl.pdf}
     \hfill
     \includegraphics[height=.6cm]{images/mrg-sessiontype.pdf}
   \end{beamercolorbox}%
+\else
+\fi
 }
 
 \defbeamertemplate*{footline}{iclpt theme}
 {%
+\ifnum \insertpagenumber=1
 \begin{beamercolorbox}[ht=.30cm,dp=0.2cm,wd=\textwidth,leftskip=.3cm,rightskip=.3cm]{author in head/foot}%
   \begin{minipage}[c]{0.62\textwidth}%
     \usebeamerfont{author in head/foot}
@@ -110,6 +114,29 @@ in head/foot}{fg=beamer@iclightblue,bg=beamer@icmiddleblue}
     \fi
   \end{minipage}
 \end{beamercolorbox}%
+\else
+\begin{beamercolorbox}[ht=.30cm,dp=0.2cm,wd=\textwidth,leftskip=0.3cm,rightskip=.3cm]{author in head/foot}%
+  \begin{minipage}[c]{0.08\textwidth}
+    \colorbox{white}{\includegraphics[height=.4cm]{images/mrg-sessiontype.pdf}}
+  \end{minipage}
+  \begin{minipage}[c]{0.54\textwidth}%
+    \usebeamerfont{author in head/foot}
+    \insertshortauthor 
+    {\it \insertshorttitle}
+  \end{minipage}\hfill%
+  \begin{minipage}[c]{0.32\textwidth}
+    \hfill \textsf{\href{http://mrg.doc.ic.ac.uk}{mrg.doc.ic.ac.uk}}\hspace{1em}
+    \texttt{\#\beamerthemeiclpt@hashtag}
+    \ifbeamerthemeiclpt@slidenumber
+      \usebeamerfont{footline}%
+      \usebeamercolor[fg]{footline}%
+      \hspace{0.5em}\insertframenumber/\inserttotalframenumber%
+    \else
+    \relax
+    \fi
+  \end{minipage}
+\end{beamercolorbox}%
+\fi
 }
 
 \setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth]{images/background.pdf}}
