@@ -1,0 +1,37 @@
+%
+% Default settings for tikz
+%
+
+\usetikzlibrary{arrows,calc,positioning,shapes,trees}
+
+\newcommand{\tikzNodeText}[1]{\begin{tabular}{l}#1\end{tabular}}
+\tikzstyle{process} = [
+  %circle,draw,thick,fill=blue!10,
+  circle,
+  draw,
+  fill=blue!10,
+ % top color=blue!10,
+ % bottom color=blue!35,
+  font=\sffamily\bfseries,
+  align=center,
+]
+\tikzstyle{process-long} = [
+  %ellipse,draw,thick,fill=blue!10,
+  rectangle,
+  rounded corners,
+  draw,
+  fill=blue!10,
+ % top color=blue!10,
+ % bottom color=blue!35,
+  font=\sffamily\bfseries\footnotesize,
+  align=center,
+  minimum width=4.2em,
+  minimum height=2em,
+]
+\tikzset{
+  invisible/.style={opacity=0},
+  alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} 
+  },
+  visible on/.style={alt=#1{}{invisible}},
+}

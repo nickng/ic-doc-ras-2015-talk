@@ -1,0 +1,19 @@
+%
+% Macros for Pabble listing
+% Depends: lstlisting, xcolor[dvipsnames], macros/lstlisting.defaults, macros/lstlisting.Scribble
+%
+
+\lstdefinelanguage{Pabble}{
+  language=Scribble,
+  morekeywords={if,foreach,const,range,allreduce,allgather,group,All,oneof,repeat,module},
+  morekeywords=[2]{max}, % Datatype and special values
+  morekeywords=[3]{inv,apply}, % Auxiliary functions
+  keywordstyle=[2]\lstDatatypeStyle,
+  keywordstyle=[3]\lstAuxStyle,
+}
+
+%
+% Inline Pabble and Scribble (\lstscribble{code})
+%
+\newcommand{\lstscribble}{\lstinline[language=Pabble,basicstyle=\lstInlineStyle,mathescape]}
+

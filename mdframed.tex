@@ -1,0 +1,39 @@
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{tikz}
+% Named process/protocol lstlisting using mdframed+tikz package.
+%
+
+\makeatletter
+\def\mdf@@codeheading{Unnamed \lstlistingname}
+\define@key{mdf}{title}{\def\mdf@@codeheading{#1}}
+
+\tikzstyle{lstnamed-label} = [
+  fill=Gray,
+  text=white,
+  left,
+  anchor=north east,
+  font=\bfseries\sffamily\small,
+  rounded corners=0pt,
+]
+\mdfdefinestyle{lstnamed}{%
+    innertopmargin=3pt,
+    middlelinewidth=0.5pt,
+    middlelinecolor=gray-bg,
+    backgroundcolor=gray-bg,
+    outerlinewidth=0pt,
+    outerlinecolor=white,
+    innerleftmargin=0pt,
+    innerrightmargin=0pt,
+    innerbottommargin=0pt,
+    leftmargin=0pt,
+    rightmargin=0pt,
+    skipabove=\topskip,
+    skipbelow=\topskip,
+    roundcorner=2pt,
+    singleextra={\node[lstnamed-label] at (P) {\csname mdf@@codeheading\endcsname};},
+    firstextra={\node[lstnamed-label]  at (P) {\csname mdf@@codeheading\endcsname};}
+}
+
+\lstnewenvironment{lstnamed}[2][]{%
+  \lstset{#1}\mdframed[style=lstnamed,title={#2}]
+}{\endmdframed}

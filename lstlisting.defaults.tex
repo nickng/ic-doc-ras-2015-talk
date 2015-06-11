@@ -1,0 +1,51 @@
+%
+% Default settings for lstlisting
+%
+
+\newcommand{\lstCodeSize}{\footnotesize}
+\newcommand{\lstPrimitiveStyle}{\color{Blue}\bfseries}
+\newcommand{\lstDatatypeStyle}{\color{OliveGreen}\bfseries}
+\newcommand{\lstConstStyle}{\color{RedViolet}\bfseries}
+\newcommand{\lstAuxStyle}{\color{RedViolet}}
+\newcommand{\lstNumberStyle}{\tiny\sffamily\color{Gray}}
+\newcommand{\lstInlineStyle}{\footnotesize\ttfamily}
+
+\lstset{
+  float=hbp,
+  backgroundcolor=\color{gray-bg},
+  basicstyle=\lstCodeSize\ttfamily,
+  identifierstyle=\color{Black},
+  stringstyle=\color{Violet},
+  commentstyle=\itshape\color{Gray},
+  keywordstyle=\lstPrimitiveStyle,
+  columns=flexible,
+  tabsize=2,
+  extendedchars=true,
+  captionpos=b,
+  numberstyle=\lstNumberStyle,
+  numbers=left,
+  xleftmargin=2em, % Don't go over the borders
+  framexleftmargin=1.5em,
+  showstringspaces=false,
+  escapeinside={/*<}{>*/},
+  mathescape=true,
+  breaklines=true,
+}
+\lstdefinestyle{intable}{
+  backgroundcolor=,
+  numbers=none,
+  breaklines=true,
+  escapeinside={/*<}{>*/},
+  columns=flexible
+}
+\lstdefinestyle{process}{
+  frame=l,
+  backgroundcolor=\color{gray-bg},
+  numbers=none,
+  breaklines=true,
+  escapeinside={/*<}{>*/},
+  columns=flexible,
+  xleftmargin=0pt,
+  framexleftmargin=0pt,
+  linewidth=0.8\textwidth
+}

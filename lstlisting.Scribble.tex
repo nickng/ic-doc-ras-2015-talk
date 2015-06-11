@@ -1,0 +1,12 @@
+%
+% Macros for Pabble listing
+% Depends: lstlisting, xcolor[dvipsnames], macros/lstlisting.defaults
+%
+
+\lstdefinelanguage{Scribble}{
+  morekeywords={role,global,local,import,at,protocol,to,from,rec,par,choice,or,continue,package,repeat},
+  morekeywords=[2]{int,float,char,string},
+  keywordstyle=[2]\lstDatatypeStyle,
+  morecomment=[n]{/*}{*/},
+  morecomment=[l]{//},
+}

@@ -1,0 +1,75 @@
+%
+% Macros for MPI listing
+% Depends: lstlisting, xcolor[dvipsnames]
+%
+
+\lstdefinelanguage{MPI}{
+  language=C,
+  morekeywords=[2]{ % [2] Primitive keywords
+    MPI_Send,
+    MPI_Recv,
+    MPI_Isend,
+    MPI_Irecv,
+    MPI_Barrier,
+    MPI_Bcast,
+    MPI_Reduce,
+    MPI_Gather,
+    MPI_Scatter,
+    MPI_Allgather,
+    MPI_Alltoall,
+    MPI_Alltoallv,
+    MPI_Allreduce,
+    MPI_Probe,MPI_Iprobe,
+    MPI_Comm_rank,
+    MPI_Comm_size,
+    MPI_Wait,
+    MPI_Waitall,
+    MPI_Init,
+    MPI_Finalize
+  },
+  morekeywords=[3]{ % [3] MPI enums
+    MPI_CHAR,
+    MPI_UNSIGNED_CHAR,
+    MPI_BYTE,
+    MPI_SHORT,
+    MPI_UNSIGNED_SHORT,
+    MPI_INT,
+    MPI_UNSIGNED,
+    MPI_LONG,
+    MPI_UNSIGNED_LONG,
+    MPI_FLOAT,
+    MPI_DOUBLE,
+    MPI_LONG_DOUBLE,
+    MPI_LONG_LONG_INT,
+    MPI_MIN,
+    MPI_PROD,
+    MPI_MAX,
+    MPI_MIN,
+    MPI_SUM,
+    MPI_PROD,
+    MPI_LAND,
+    MPI_BAND,
+    MPI_LOR,
+    MPI_BOR,
+    MPI_LXOR,
+    MPI_BXOR,
+    MPI_MINLOC,
+    MPI_MAXLOC,
+  },
+  morekeywords=[4]{ % [4] Types and constants with special meaning
+    MPI_ANY_RANK,
+    MPI_ANY_TAG,
+    MPI_COMM_WORLD,
+    MPI_TAG,
+    MPI_Datatype,
+    MPI_Op,
+  },
+  keywordstyle=[2]{\lstPrimitiveStyle},
+  keywordstyle=[3]{\lstDatatypeStyle},
+  keywordstyle=[4]{\lstConstStyle}
+}
+
+%
+% Inline MPI (\lstmpi{code})
+%
+\newcommand\lstmpi[0]{\lstinline[language=MPI,basicstyle=\lstInlineStyle]}
