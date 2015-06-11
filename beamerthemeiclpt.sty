@@ -68,16 +68,22 @@
 \setbeamercolor{block title alerted}{fg=beamer@iclightred,bg=beamer@icmiddlered}
 \setbeamercolor{block body alerted}{fg=beamer@icmiddlered,bg=beamer@iclightred}
 
-\setbeamercolor{author
-in head/foot}{fg=beamer@iclightblue,bg=beamer@icmiddleblue}
+\setbeamercolor{author in head/foot}{fg=beamer@iclightblue,bg=beamer@icmiddleblue}
 \setbeamercolor{institute in head/foot}{}
+
+\setbeamercolor{subtitle}{fg=black!60}
 
 \setbeamercolor*{titlelike}{parent=structure}
 
 \defbeamertemplate*{frametitle}{iclpt theme}
 {
 \begin{beamercolorbox}[center,wd=\textwidth]{frametitle}
-	\usebeamerfont{frametitle}\insertframetitle
+  \usebeamerfont{frametitle}\insertframetitle
+  \ifx\insertframesubtitle\@empty%
+  \else%
+    \vskip0.1em%
+    {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertframesubtitle\par}%
+  \fi
 \end{beamercolorbox}%
 }
 
