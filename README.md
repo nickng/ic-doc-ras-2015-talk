@@ -1,8 +1,10 @@
-mrg/beamer-template
-===================
+# Pabble, SEssion Types and dataflow programming
 
-This is the MRG LaTeX beamer theme.
-The theme is based on the Imperial College LaTeX theme (`iclpt`) with
-some small modifications (MRG logo on top left).
+This is my RA Symposium 2015 talk slides source
 
-See `example.tex` for usage example.
+## Build
+
+(Requires xelatex)
+```
+make
+```
